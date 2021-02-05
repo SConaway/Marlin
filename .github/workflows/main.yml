@@ -33,4 +33,9 @@ jobs:
     - name: Clean everything
       run: pio run --target clean
     - name: Run PlatformIO
-      run: pio run 
+      run: pio run     
+    - name: Upload
+      uses: actions/upload-artifact@v2
+      with:
+        name: firmware.bin
+        path: .pio/build/STM32F103RC_btt_512K_USB/firmware.bin
